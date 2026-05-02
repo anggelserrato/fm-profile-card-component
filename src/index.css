@@ -1,1 +1,57 @@
 @import 'tailwindcss';
+
+@theme {
+  --color-blue-600: hsl(185, 75%, 39%);
+  --color-blue-400: hsl(183, 62%, 54%);
+  --color-navy-950: hsl(229, 23%, 23%);
+  --color-gray-500: hsl(227, 10%, 46%);
+  --color-gray-100: hsl(225, 10%, 92%);
+  --color-primary: hsl(174, 100%, 66%);
+  --color-secondary: hsl(195, 91%, 37%);
+  --gradient-primary: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  --font-kumbh-sans: 'Kumbh Sans', sans-serif;
+  --spacing-100: 0.5rem; /*8px*/
+  --spacing-200: 1rem; /*16px*/
+  --spacing-300: 1.5rem; /*24px*/
+  --spacing-700: 3.5rem; /*56px*/
+}
+
+@layer base {
+  body {
+    background-color: var(--color-blue-600);
+    font-family: var(--font-kumbh-sans);
+    font-size: 18px;
+  }
+}
+
+@utility text-preset-1-bold {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 125%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-1-regular {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 125%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-2 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 125%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-3 {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 125%;
+  letter-spacing: 1.5px;
+}
