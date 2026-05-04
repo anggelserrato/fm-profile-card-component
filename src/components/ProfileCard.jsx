@@ -36,8 +36,10 @@ function ProfileCard() {
             />
             <div className="flex flex-col gap-100">
               <h1 className="text-preset-1-bold text-navy-950">
-                Victor Crest{' '}
-                <span className="text-preset-1-regular text-gray-500">26</span>
+                Victor Crest
+                <span className="ml-100 text-preset-1-regular text-gray-500">
+                  26
+                </span>
               </h1>
               <p className="text-preset-2 text-gray-500">London</p>
             </div>
