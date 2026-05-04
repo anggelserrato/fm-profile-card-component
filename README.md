@@ -21,6 +21,8 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 
 ### Screenshot
 
+<img width="1920" height="1440" alt="profile-card-component-shots" src="https://github.com/user-attachments/assets/49eae041-618b-4f07-8018-48954421a0f2" />
+
 ### Links
 
 - Solution URL: [View Code](https://github.com/anggelserrato/fm-profile-card-component)
