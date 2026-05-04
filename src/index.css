@@ -1,5 +1,12 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'Kumbh Sans';
+  src: url('./fonts/KumbhSans.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 @theme {
   --color-blue-600: hsl(185, 75%, 39%);
   --color-blue-400: hsl(183, 62%, 54%);
@@ -8,50 +15,75 @@
   --color-gray-100: hsl(225, 10%, 92%);
   --color-primary: hsl(174, 100%, 66%);
   --color-secondary: hsl(195, 91%, 37%);
+
   --gradient-primary: linear-gradient(
     45deg,
     var(--color-primary),
     var(--color-secondary)
   );
+
   --font-kumbh-sans: 'Kumbh Sans', sans-serif;
-  --spacing-100: 0.5rem; /*8px*/
-  --spacing-200: 1rem; /*16px*/
-  --spacing-300: 1.5rem; /*24px*/
-  --spacing-700: 3.5rem; /*56px*/
+
+  /* Step -3: 9.2593px → 10.24px */
+  --text--3: clamp(0.5787rem, 0.5571rem + 0.0921vw, 0.64rem);
+  /* Step -1: 13.3333px → 16px */
+  --text--1: clamp(0.8333rem, 0.7746rem + 0.2504vw, 1rem);
+  /* Step 0: 16px → 20px */
+  --text-0: clamp(1rem, 0.912rem + 0.3756vw, 1.25rem);
+
+  /* Space 2xs: 8px → 10px */
+  --spacing-2xs: clamp(0.5rem, 0.456rem + 0.1878vw, 0.625rem);
+  /* Space s: 16px → 20px */
+  --spacing-s: clamp(1rem, 0.912rem + 0.3756vw, 1.25rem);
+  /* Space m: 24px → 30px */
+  --spacing-m: clamp(1.5rem, 1.368rem + 0.5634vw, 1.875rem);
+  /* Space 2xl: 56px → 70px */
+  --spacing-2xl: clamp(3.5rem, 3.1919rem + 1.3146vw, 4.375rem);
+
+  --spacing-100: var(--spacing-2xs); /* 8px -> 10px */
+  --spacing-200: var(--spacing-s); /* 16px -> 20px */
+  --spacing-300: var(--spacing-m); /* 24px -> 32px */
+  --spacing-700: var(--spacing-2xl); /* 56px -> 70px */
 }
 
 @layer base {
   body {
     background-color: var(--color-blue-600);
     font-family: var(--font-kumbh-sans);
-    font-size: 18px;
+    font-size: var(--text-0);
+    background-image:
+      url('./assets/bg-pattern-top.svg'), url('./assets/bg-pattern-bottom.svg');
+    background-repeat: no-repeat;
+    background-position:
+      right 50vw bottom 50vh,
+      left 50vw top 50vh;
   }
 }
 
 @utility text-preset-1-bold {
   font-weight: 700;
-  font-size: 18px;
-  line-height: 125%;
+  font-size: var(--text-0);
+  line-height: 1.25;
   letter-spacing: 0px;
 }
 
 @utility text-preset-1-regular {
   font-weight: 400;
-  font-size: 18px;
-  line-height: 125%;
+  font-size: var(--text-0);
+  line-height: 1.25;
   letter-spacing: 0px;
 }
 
 @utility text-preset-2 {
   font-weight: 400;
-  font-size: 14px;
-  line-height: 125%;
+  font-size: var(--text--1);
+  line-height: 1.25;
   letter-spacing: 0px;
 }
 
 @utility text-preset-3 {
   font-weight: 400;
-  font-size: 10px;
-  line-height: 125%;
-  letter-spacing: 1.5px;
+  font-size: var(--text--3);
+  line-height: 1.25;
+  letter-spacing: 0.15em;
 }
