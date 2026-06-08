@@ -1,10 +1,19 @@
 @import 'tailwindcss';
 
 @font-face {
-  font-family: 'Kumbh Sans';
-  src: url('./fonts/KumbhSans.ttf') format('truetype');
-  font-weight: 100 900;
   font-display: swap;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/kumbh-sans-v27-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/kumbh-sans-v27-latin-700.woff2') format('woff2');
 }
 
 @theme {
@@ -22,7 +31,9 @@
     var(--color-secondary)
   );
 
-  --font-kumbh-sans: 'Kumbh Sans', sans-serif;
+  --font-sans:
+    'Kumbh Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
   /* Step -3: 9.2593px → 10.24px */
   --text--3: clamp(0.5787rem, 0.5571rem + 0.0921vw, 0.64rem);
@@ -47,9 +58,12 @@
 }
 
 @layer base {
+  html {
+    @apply antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   body {
     background-color: var(--color-blue-600);
-    font-family: var(--font-kumbh-sans);
     font-size: var(--text-0);
     background-image:
       url('./assets/bg-pattern-top.svg'), url('./assets/bg-pattern-bottom.svg');
